@@ -1,13 +1,13 @@
 ![](src/image/WebCell-0.png)
 
-# WebCell scaffold
+# WebCell DashBoard
 
-App Project scaffold of **WebCell** v2
+System DashBoard of **WebCell** v2
 
-https://web-cell.dev/scaffold/
+https://web-cell.dev/DashBoard/
 
-[![NPM Dependency](https://david-dm.org/EasyWebApp/scaffold.svg)][1]
-[![Build Status](https://travis-ci.com/EasyWebApp/scaffold.svg?branch=master)][2]
+[![NPM Dependency](https://david-dm.org/EasyWebApp/DashBoard.svg)][1]
+[![Build Status](https://travis-ci.com/EasyWebApp/DashBoard.svg?branch=master)][2]
 
 ## Technology stack
 
@@ -33,8 +33,8 @@ npm start
 npm run build
 ```
 
-[1]: https://david-dm.org/EasyWebApp/scaffold
-[2]: https://travis-ci.com/EasyWebApp/scaffold
+[1]: https://david-dm.org/EasyWebApp/DashBoard
+[2]: https://travis-ci.com/EasyWebApp/DashBoard
 [3]: https://typescriptlang.org
 [4]: https://web-cell.dev/
 [5]: https://getbootstrap.com

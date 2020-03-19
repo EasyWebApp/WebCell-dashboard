@@ -1,23 +1,25 @@
 {
-    "name": "webcell-scaffold",
-    "version": "0.3.0",
-    "description": "App Project scaffold of WebCell v2",
+    "name": "webcell-dashboard",
+    "version": "0.5.0",
+    "description": "System DashBoard of WebCell v2",
     "keywords": [
         "web-component",
         "typescript",
         "jsx",
-        "web-cell"
+        "web-cell",
+        "dashboard",
+        "admin"
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/EasyWebApp/scaffold.git"
+        "url": "git+https://github.com/EasyWebApp/DashBoard.git"
     },
     "bugs": {
-        "url": "https://github.com/EasyWebApp/scaffold/issues"
+        "url": "https://github.com/EasyWebApp/DashBoard/issues"
     },
     "main": "src/index.html",
     "dependencies": {
-        "boot-cell": "^1.0.0-rc.0",
+        "boot-cell": "^1.0.0-rc.1",
         "browser-unhandled-rejection": "^1.0.2",
         "cell-router": "^2.0.0-rc.7",
         "classnames": "^2.2.6",
