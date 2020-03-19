@@ -5,6 +5,7 @@ import { HTMLRouter } from 'cell-router/source';
 import { history } from '../model';
 
 import { SignInPage } from './SignIn';
+import { DashBoard } from './DashBoard';
 
 @observer
 @component({
@@ -17,6 +18,10 @@ export class PageRouter extends HTMLRouter {
         {
             paths: [''],
             component: SignInPage
+        },
+        {
+            paths: ['admin', 'admin/dashboard'],
+            component: DashBoard
         }
     ];
 }

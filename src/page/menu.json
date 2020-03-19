@@ -1,0 +1,61 @@
+[
+    {
+        "list": [
+            {
+                "title": "Dashboard",
+                "href": "admin/dashboard",
+                "icon": "home"
+            },
+            {
+                "title": "Orders",
+                "href": "admin/order",
+                "icon": "file"
+            },
+            {
+                "title": "Products",
+                "href": "admin/product",
+                "icon": "shopping-cart"
+            },
+            {
+                "title": "Customers",
+                "href": "admin/customer",
+                "icon": "users"
+            },
+            {
+                "title": "Reports",
+                "href": "admin/report",
+                "icon": "chart-bar"
+            },
+            {
+                "title": "Integrations",
+                "href": "admin/integration",
+                "icon": "layer-group"
+            }
+        ]
+    },
+    {
+        "title": "Saved Reports",
+        "list": [
+            {
+                "title": "Current month",
+                "href": "admin/report?filter=month",
+                "icon": "file-alt"
+            },
+            {
+                "title": "Last quarter",
+                "href": "admin/report?filter=quarter",
+                "icon": "file-alt"
+            },
+            {
+                "title": "Social engagement",
+                "href": "admin/report?filter=social",
+                "icon": "file-alt"
+            },
+            {
+                "title": "Year-end sale",
+                "href": "admin/report?filter=year",
+                "icon": "file-alt"
+            }
+        ]
+    }
+]

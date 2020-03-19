@@ -4,6 +4,7 @@
         "module": "es6",
         "moduleResolution": "node",
         "esModuleInterop": true,
+        "resolveJsonModule": true,
         "experimentalDecorators": true,
         "allowJs": true,
         "sourceMap": true,
