@@ -2,7 +2,7 @@
 
 # WebCell DashBoard
 
-System DashBoard of **WebCell** v2
+Admin DashBoard scaffold of **WebCell** v2
 
 https://web-cell.dev/DashBoard/
 

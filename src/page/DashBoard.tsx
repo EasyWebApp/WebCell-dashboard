@@ -1,14 +1,129 @@
 import { component, mixin, createCell } from 'web-cell';
+import { observer } from 'mobx-web-cell';
+import { Button } from 'boot-cell/source/Form/Button';
+import { DropMenu } from 'boot-cell/source/Navigator/DropMenu';
+import { Table } from 'boot-cell/source/Content/Table';
+import { Icon } from 'boot-cell/source/Reminder/Icon';
+import Chart from 'chart.js';
 
 import { PageFrame } from '../component/PageFrame';
 import menu from './menu.json';
+import { content } from '../model';
 
+@observer
 @component({
     tagName: 'dash-board',
     renderTarget: 'children'
 })
 export class DashBoard extends mixin() {
+    connectedCallback() {
+        content.getPaths();
+
+        super.connectedCallback();
+    }
+
+    renderChart = (canvas: HTMLCanvasElement) =>
+        new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday'
+                ],
+                datasets: [
+                    {
+                        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                        lineTension: 0,
+                        backgroundColor: 'transparent',
+                        borderColor: '#007bff',
+                        borderWidth: 4,
+                        pointBackgroundColor: '#007bff'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: false
+                            }
+                        }
+                    ]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+
     render() {
-        return <PageFrame menu={menu} />;
+        return (
+            <PageFrame menu={menu}>
+                <header className="d-flex align-items-center border-bottom mb-3">
+                    <h1>DashBoard</h1>
+
+                    <div className="btn-group ml-auto mr-3">
+                        <Button kind="secondary" size="sm" outline>
+                            Share
+                        </Button>
+                        <Button kind="secondary" size="sm" outline>
+                            Export
+                        </Button>
+                    </div>
+                    <DropMenu
+                        title="This week"
+                        buttonKind="secondary"
+                        buttonSize="sm"
+                        alignType="right"
+                    />
+                </header>
+
+                <canvas width="100%" height="80vh" ref={this.renderChart} />
+
+                <h2 className="mt-3">Contents</h2>
+
+                <Table striped hover center>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Path</th>
+                            <th>Size</th>
+                            <th>SHA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {content.list.map(
+                            ({ type, html_url, name, path, size, sha }) => (
+                                <tr>
+                                    <td>
+                                        <Icon
+                                            name={
+                                                type === 'dir' ? 'folder' : type
+                                            }
+                                        />
+                                        <span className="sr-only">{type}</span>
+                                    </td>
+                                    <td>
+                                        <a target="_blank" href={html_url}>
+                                            {name}
+                                        </a>
+                                    </td>
+                                    <td>{path}</td>
+                                    <td className="text-right">{size}</td>
+                                    <td>{sha}</td>
+                                </tr>
+                            )
+                        )}
+                    </tbody>
+                </Table>
+            </PageFrame>
+        );
     }
 }

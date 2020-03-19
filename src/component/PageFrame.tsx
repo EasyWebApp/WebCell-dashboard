@@ -42,16 +42,18 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                     required
                     placeholder="Search"
                 />
-                <Button kind="light" outline className="ml-md-5 mr-md-4">
+                <Button
+                    kind="light"
+                    outline
+                    className="ml-md-5 mr-md-4"
+                    onClick={() => (self.location.href = '')}
+                >
                     Sign out
                 </Button>
             </NavBar>
 
-            <main
-                className="d-flex mt-5 pt-2"
-                style={{ height: 'calc(100vh - 3rem)' }}
-            >
-                <div className="py-2 bg-light border-right overflow-auto">
+            <div className="d-flex vh-100" style={{ paddingTop: '3.6rem' }}>
+                <nav className="py-2 bg-light border-right overflow-auto">
                     {menu.map(({ title, list }) => (
                         <Fragment>
                             {title && (
@@ -62,10 +64,12 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                             <ColNav list={list} />
                         </Fragment>
                     ))}
-                </div>
+                </nav>
 
-                {defaultSlot}
-            </main>
+                <main className="flex-fill h-100 p-4 overflow-auto">
+                    {defaultSlot}
+                </main>
+            </div>
         </Fragment>
     );
 }
