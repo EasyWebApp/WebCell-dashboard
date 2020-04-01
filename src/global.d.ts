@@ -1,10 +1,10 @@
-declare module '*.module.css' {
+declare module '*.css' {
     const map: { [key: string]: string };
 
     export default map;
 }
 
-declare module '*.module.less' {
+declare module '*.less' {
     const map: { [key: string]: string };
 
     export default map;

@@ -65,7 +65,7 @@ export class DashBoard extends mixin() {
     render() {
         return (
             <PageFrame menu={menu}>
-                <header className="d-flex align-items-center border-bottom mb-3">
+                <header className="d-flex flex-wrap align-items-center border-bottom mb-3">
                     <h1>DashBoard</h1>
 
                     <div className="btn-group ml-auto mr-3">

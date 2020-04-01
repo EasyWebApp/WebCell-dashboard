@@ -9,8 +9,8 @@ export function SignInPage() {
     return (
         <main className="bg-light">
             <form
-                className="m-auto py-5"
-                style={{ width: '26.25rem' }}
+                className="m-auto py-5 px-3"
+                style={{ maxWidth: '26.25rem' }}
                 onSubmit={() => history.push('admin')}
             >
                 <div className="text-center mb-4">

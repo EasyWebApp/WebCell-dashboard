@@ -9,6 +9,7 @@ import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { Button } from 'boot-cell/source/Form/Button';
 
 import { ColNav } from './ColNav';
+import style from './PageFrame.less';
 import WebCell_0 from '../image/WebCell-0.png';
 
 type MenuItem = NavProps['list'][0] & {
@@ -30,9 +31,9 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
             <NavBar
                 brand={
                     <img
+                        className={style.logo}
                         alt="WebCell scaffold"
                         src={WebCell_0}
-                        style={{ width: '2rem' }}
                     />
                 }
             >
@@ -52,12 +53,12 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                 </Button>
             </NavBar>
 
-            <div className="d-flex vh-100" style={{ paddingTop: '3.6rem' }}>
-                <nav className="py-2 bg-light border-right overflow-auto">
+            <div className={style.body}>
+                <nav className="py-2 bg-light border-right">
                     {menu.map(({ title, list }) => (
                         <Fragment>
                             {title && (
-                                <h6 className="text-muted mx-3 mt-4">
+                                <h6 className="text-muted mx-3 mt-4 d-none d-md-block">
                                     {title}
                                 </h6>
                             )}

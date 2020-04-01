@@ -12,13 +12,13 @@ export function ColNav({ list, ...rest }: NavProps) {
                     <Fragment>
                         <Icon
                             name={icon}
-                            className="text-center mr-2"
+                            className="text-center mr-md-2"
                             style={{
                                 width: '1.25rem',
                                 height: '1.25rem'
                             }}
                         />
-                        {title}
+                        <span className="d-none d-md-inline">{title}</span>
                     </Fragment>
                 ),
                 ...rest
