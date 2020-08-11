@@ -46,7 +46,7 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                 <Button
                     kind="light"
                     outline
-                    className="ml-md-5 mr-md-4"
+                    className="ml-md-5 mr-md-4 text-nowrap"
                     onClick={() => (self.location.href = '')}
                 >
                     Sign out
