@@ -3,7 +3,7 @@ import { observer } from 'mobx-web-cell';
 import { Button } from 'boot-cell/source/Form/Button';
 import { DropMenu } from 'boot-cell/source/Navigator/DropMenu';
 import { Table } from 'boot-cell/source/Content/Table';
-import { Icon } from 'boot-cell/source/Reminder/Icon';
+import { FAIcon } from 'boot-cell/source/Reminder/FAIcon';
 import Chart from 'chart.js';
 
 import { PageFrame } from '../component/PageFrame';
@@ -81,6 +81,7 @@ export class DashBoard extends mixin() {
                         buttonKind="secondary"
                         buttonSize="sm"
                         alignType="right"
+                        list={[]}
                     />
                 </header>
 
@@ -103,7 +104,7 @@ export class DashBoard extends mixin() {
                             ({ type, html_url, name, path, size, sha }) => (
                                 <tr>
                                     <td>
-                                        <Icon
+                                        <FAIcon
                                             name={
                                                 type === 'dir' ? 'folder' : type
                                             }
