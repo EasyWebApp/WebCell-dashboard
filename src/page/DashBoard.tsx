@@ -77,11 +77,10 @@ export class DashBoard extends mixin() {
                         </Button>
                     </div>
                     <DropMenu
-                        title="This week"
+                        caption="This week"
                         buttonKind="secondary"
                         buttonSize="sm"
                         alignType="right"
-                        list={[]}
                     />
                 </header>
 
