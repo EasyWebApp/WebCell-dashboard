@@ -69,16 +69,16 @@ export class DashBoard extends mixin() {
                     <h1>DashBoard</h1>
 
                     <div className="btn-group ml-auto mr-3">
-                        <Button kind="secondary" size="sm" outline>
+                        <Button color="secondary" size="sm" outline>
                             Share
                         </Button>
-                        <Button kind="secondary" size="sm" outline>
+                        <Button color="secondary" size="sm" outline>
                             Export
                         </Button>
                     </div>
                     <DropMenu
                         caption="This week"
-                        buttonKind="secondary"
+                        buttonColor="secondary"
                         buttonSize="sm"
                         alignType="right"
                     />

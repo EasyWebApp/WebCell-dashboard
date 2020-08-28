@@ -11,7 +11,7 @@ https://web-cell.dev/DashBoard/
 
 ## Technology stack
 
--   Language: [TypeScript v3][3]
+-   Language: [TypeScript v4][3]
 -   Component engine: [WebCell v2][4]
 -   Component suite: [BootStrap v4][5]
 -   State management: [MobX v5][6]

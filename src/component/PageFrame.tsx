@@ -27,7 +27,7 @@ interface PageFrameProps extends WebCellProps {
 
 export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
     return (
-        <Fragment>
+        <>
             <NavBar
                 brand={
                     <img
@@ -44,7 +44,7 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                     placeholder="Search"
                 />
                 <Button
-                    kind="light"
+                    color="light"
                     outline
                     className="ml-md-5 mr-md-4 text-nowrap"
                     onClick={() => (self.location.href = '')}
@@ -56,14 +56,14 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
             <div className={style.body}>
                 <nav className="py-2 bg-light border-right">
                     {menu.map(({ title, list }) => (
-                        <Fragment>
+                        <>
                             {title && (
                                 <h6 className="text-muted mx-3 mt-4 d-none d-md-block">
                                     {title}
                                 </h6>
                             )}
                             <ColNav list={list} />
-                        </Fragment>
+                        </>
                     ))}
                 </nav>
 
@@ -71,6 +71,6 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                     {defaultSlot}
                 </main>
             </div>
-        </Fragment>
+        </>
     );
 }
