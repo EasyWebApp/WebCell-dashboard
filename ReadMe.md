@@ -7,7 +7,7 @@ Admin DashBoard scaffold of **WebCell** v2
 https://web-cell.dev/DashBoard/
 
 [![NPM Dependency](https://david-dm.org/EasyWebApp/DashBoard.svg)][1]
-[![Build Status](https://travis-ci.com/EasyWebApp/DashBoard.svg?branch=master)][2]
+[![CI & CD](https://github.com/EasyWebApp/scaffold/workflows/CI%20&%20CD/badge.svg)][2]
 
 ## Technology stack
 
@@ -17,7 +17,7 @@ https://web-cell.dev/DashBoard/
 -   State management: [MobX v5][6]
 -   PWA framework: [Workbox v4][7]
 -   Package bundler: [Parcel v1][8]
--   CI / CD: [Travis CI][9] + [GitHub Pages][10]
+-   CI / CD: GitHub [Actions][9] + [Pages][10]
 
 ## Development
 
@@ -34,12 +34,12 @@ npm run build
 ```
 
 [1]: https://david-dm.org/EasyWebApp/DashBoard
-[2]: https://travis-ci.com/EasyWebApp/DashBoard
+[2]: https://github.com/EasyWebApp/DashBoard/actions
 [3]: https://typescriptlang.org
 [4]: https://web-cell.dev/
 [5]: https://getbootstrap.com
 [6]: https://mobx.js.org
 [7]: https://developers.google.com/web/tools/workbox
 [8]: https://parceljs.org
-[9]: https://travis-ci.com/
+[9]: https://github.com/features/actions
 [10]: https://pages.github.com/
