@@ -1,8 +1,8 @@
-import { component, mixin, createCell } from 'web-cell';
+import { component, mixin, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { Button } from 'boot-cell/source/Form/Button';
 import { DropMenu } from 'boot-cell/source/Navigator/DropMenu';
-import { Table } from 'boot-cell/source/Content/Table';
+import { Table, TableRow } from 'boot-cell/source/Content/Table';
 import { FAIcon } from 'boot-cell/source/Reminder/FAIcon';
 import Chart from 'chart.js';
 
@@ -77,7 +77,12 @@ export class DashBoard extends mixin() {
                         </Button>
                     </div>
                     <DropMenu
-                        caption="This week"
+                        caption={
+                            <>
+                                <FAIcon name="calendar" className="mr-2" />
+                                This week
+                            </>
+                        }
                         buttonColor="secondary"
                         buttonSize="sm"
                         alignType="right"
@@ -89,39 +94,34 @@ export class DashBoard extends mixin() {
                 <h2 className="mt-3">Contents</h2>
 
                 <Table striped hover center>
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Path</th>
-                            <th>Size</th>
-                            <th>SHA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {content.list.map(
-                            ({ type, html_url, name, path, size, sha }) => (
-                                <tr>
-                                    <td>
-                                        <FAIcon
-                                            name={
-                                                type === 'dir' ? 'folder' : type
-                                            }
-                                        />
-                                        <span className="sr-only">{type}</span>
-                                    </td>
-                                    <td>
-                                        <a target="_blank" href={html_url}>
-                                            {name}
-                                        </a>
-                                    </td>
-                                    <td>{path}</td>
-                                    <td className="text-right">{size}</td>
-                                    <td>{sha}</td>
-                                </tr>
-                            )
-                        )}
-                    </tbody>
+                    <TableRow type="head">
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Path</th>
+                        <th>Size</th>
+                        <th>SHA</th>
+                    </TableRow>
+
+                    {content.list.map(
+                        ({ type, html_url, name, path, size, sha }) => (
+                            <TableRow>
+                                <td>
+                                    <FAIcon
+                                        name={type === 'dir' ? 'folder' : type}
+                                    />
+                                    <span className="sr-only">{type}</span>
+                                </td>
+                                <td>
+                                    <a target="_blank" href={html_url}>
+                                        {name}
+                                    </a>
+                                </td>
+                                <td>{path}</td>
+                                <td className="text-right">{size}</td>
+                                <td>{sha}</td>
+                            </TableRow>
+                        )
+                    )}
                 </Table>
             </PageFrame>
         );

@@ -1,4 +1,5 @@
 import { createCell } from 'web-cell';
+import { formToJSON } from 'web-utility/source/DOM';
 import { FormField } from 'boot-cell/source/Form/FormField';
 import { ToggleField } from 'boot-cell/source/Form/ToggleField';
 import { Button } from 'boot-cell/source/Form/Button';
@@ -11,13 +12,19 @@ export function SignInPage() {
             <form
                 className="m-auto py-5 px-3"
                 style={{ maxWidth: '26.25rem' }}
-                onSubmit={() => history.push('admin')}
+                onSubmit={(event: Event) => {
+                    event.preventDefault(), event.stopPropagation();
+
+                    console.log(formToJSON(event.target as HTMLFormElement));
+
+                    history.push('admin');
+                }}
             >
                 <div className="text-center mb-4">
                     <img
                         className="mb-4"
                         style={{ width: 72, height: 72 }}
-                        src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg"
+                        src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg"
                     />
                     <h1 className="h3 mb-3 font-weight-normal">
                         Floating labels
@@ -33,7 +40,7 @@ export function SignInPage() {
 
                 <FormField
                     type="email"
-                    id="inputEmail"
+                    name="email"
                     required
                     autofocus
                     placeholder="Email address"
@@ -41,7 +48,7 @@ export function SignInPage() {
                 />
                 <FormField
                     type="password"
-                    id="inputPassword"
+                    name="password"
                     required
                     autofocus
                     placeholder="Password"
@@ -50,7 +57,7 @@ export function SignInPage() {
                 <ToggleField
                     className="mb-3"
                     type="checkbox"
-                    value="remember-me"
+                    name="remember_me"
                 >
                     Remember me
                 </ToggleField>
