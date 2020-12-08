@@ -15,7 +15,7 @@ https://web-cell.dev/DashBoard/
 -   Component engine: [WebCell v2][4]
 -   Component suite: [BootCell v1][5]
 -   State management: [MobX v5][6]
--   PWA framework: [Workbox v4][7]
+-   PWA framework: [Workbox v6][7]
 -   Package bundler: [Parcel v1][8]
 -   CI / CD: GitHub [Actions][9] + [Pages][10]
 

@@ -1,15 +1,13 @@
 import { observable } from 'mobx';
+import { components } from '@octokit/openapi-types';
 
 import { service } from './service';
 
-export interface Content {
-    type: 'file' | 'dir';
-    name: string;
-    path: string;
-    size: number;
-    sha: string;
-    html_url: string;
-}
+export type PickItem<T> = T extends (infer R)[] ? R : T;
+
+export type Content =
+    | PickItem<components['schemas']['content-directory']>
+    | PickItem<components['schemas']['content-file']>;
 
 export class ContentModel {
     owner: string;

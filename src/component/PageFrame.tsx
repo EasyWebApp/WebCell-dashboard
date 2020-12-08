@@ -4,7 +4,7 @@ import {
     createCell,
     Fragment
 } from 'web-cell';
-import { NavProps } from 'boot-cell/source/Navigator/Nav';
+import { NavLinkProps } from 'boot-cell/source/Navigator/Nav';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { Button } from 'boot-cell/source/Form/Button';
 
@@ -12,9 +12,9 @@ import { ColNav } from './ColNav';
 import style from './PageFrame.less';
 import WebCell_0 from '../image/WebCell-0.png';
 
-type MenuItem = NavProps['list'][0] & {
+interface MenuItem extends NavLinkProps {
     icon: string;
-};
+}
 
 interface MenuSection {
     title?: VNodeChildElement;

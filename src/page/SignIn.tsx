@@ -80,7 +80,7 @@ export function SignInPage() {
                 <a
                     className="mx-1"
                     target="_blank"
-                    href="https://web-cell.dev/BootCell/"
+                    href="https://bootstrap.web-cell.dev/"
                 >
                     BootCell v1
                 </a>
