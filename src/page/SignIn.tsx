@@ -23,7 +23,7 @@ export function SignInPage() {
                 <div className="text-center mb-4">
                     <img
                         className="mb-4"
-                        style={{ width: 72, height: 72 }}
+                        style={{ width: '72', height: '72' }}
                         src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg"
                     />
                     <h1 className="h3 mb-3 font-weight-normal">
@@ -62,7 +62,7 @@ export function SignInPage() {
                     Remember me
                 </ToggleField>
 
-                <Button type="submit" block size="lg">
+                <Button type="submit" color="primary" block size="lg">
                     Sign in
                 </Button>
             </form>

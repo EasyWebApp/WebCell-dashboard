@@ -4,24 +4,21 @@ import {
     createCell,
     Fragment
 } from 'web-cell';
-import { NavLinkProps } from 'boot-cell/source/Navigator/Nav';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
+import { Nav } from 'boot-cell/source/Navigator/Nav';
+import { Field } from 'boot-cell/source/Form/Field';
 import { Button } from 'boot-cell/source/Form/Button';
 
-import { ColNav } from './ColNav';
+import { IconNavLinkProps, IconNavLink } from './IconNavLink';
 import style from './PageFrame.less';
 import WebCell_0 from '../image/WebCell-0.png';
 
-interface MenuItem extends NavLinkProps {
-    icon: string;
-}
-
 interface MenuSection {
     title?: VNodeChildElement;
-    list: MenuItem[];
+    list: IconNavLinkProps[];
 }
 
-interface PageFrameProps extends WebCellProps {
+export interface PageFrameProps extends WebCellProps {
     menu?: MenuSection[];
 }
 
@@ -37,9 +34,9 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                     />
                 }
             >
-                <input
+                <Field
                     type="search"
-                    className="form-control col-md-9 my-2 my-md-0"
+                    className="col-md-9 my-2 my-md-0"
                     required
                     placeholder="Search"
                 />
@@ -54,7 +51,7 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
             </NavBar>
 
             <div className={style.body}>
-                <nav className="py-2 bg-light border-right">
+                <Nav direction="column" className="py-2 bg-light border-right">
                     {menu.map(({ title, list }) => (
                         <>
                             {title && (
@@ -62,11 +59,12 @@ export function PageFrame({ menu = [], defaultSlot }: PageFrameProps) {
                                     {title}
                                 </h6>
                             )}
-                            <ColNav list={list} />
+                            {list.map(({ title, ...rest }) => (
+                                <IconNavLink {...rest}>{title}</IconNavLink>
+                            ))}
                         </>
                     ))}
-                </nav>
-
+                </Nav>
                 <main className="flex-fill h-100 p-4 overflow-auto">
                     {defaultSlot}
                 </main>
