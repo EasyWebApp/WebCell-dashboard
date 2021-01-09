@@ -1,8 +1,8 @@
 {
-  "name": "WebCell scaffold",
+  "name": "WebCell dashboard",
   "short_name": "WC Demo",
-  "start_url": "https://web-cell.dev/scaffold/",
-  "description": "App Project scaffold of WebCell v2",
+  "start_url": ".",
+  "description": "Admin DashBoard scaffold of WebCell v2",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",

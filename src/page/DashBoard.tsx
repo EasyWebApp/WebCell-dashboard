@@ -89,8 +89,10 @@ export class DashBoard extends mixin() {
                     />
                 </header>
 
-                <canvas width="100%" height="80vh" ref={this.renderChart} />
-
+                <canvas
+                    style={{ width: '100%', height: '80vh' }}
+                    ref={this.renderChart}
+                />
                 <h2 className="mt-3">Contents</h2>
 
                 <Table striped hover center>
