@@ -1,5 +1,5 @@
 import { createCell } from 'web-cell';
-import { CellRouter } from 'cell-router/source';
+import { CellRouter } from 'cell-router';
 
 import { history } from '../model';
 

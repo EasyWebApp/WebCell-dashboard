@@ -1,9 +1,6 @@
 import { component, mixin, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
-import { Button } from 'boot-cell/source/Form/Button';
-import { DropMenu } from 'boot-cell/source/Navigator/DropMenu';
-import { Table, TableRow } from 'boot-cell/source/Content/Table';
-import { FAIcon } from 'boot-cell/source/Reminder/FAIcon';
+import { Button, DropMenu, Table, TableRow, FAIcon } from 'boot-cell';
 import Chart from 'chart.js';
 
 import { PageFrame } from '../component/PageFrame';
@@ -85,7 +82,7 @@ export class DashBoard extends mixin() {
                         }
                         buttonColor="secondary"
                         buttonSize="sm"
-                        alignType="right"
+                        alignType="end"
                     />
                 </header>
 

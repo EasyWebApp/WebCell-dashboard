@@ -1,6 +1,5 @@
 import { createCell } from 'web-cell';
-import { NavLinkProps, NavLink } from 'boot-cell/source/Navigator/Nav';
-import { FAIcon } from 'boot-cell/source/Reminder/FAIcon';
+import { NavLinkProps, NavLink, FAIcon } from 'boot-cell';
 
 export interface IconNavLinkProps extends NavLinkProps {
     icon: string;

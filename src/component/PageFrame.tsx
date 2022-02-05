@@ -4,10 +4,7 @@ import {
     createCell,
     Fragment
 } from 'web-cell';
-import { NavBar } from 'boot-cell/source/Navigator/NavBar';
-import { Nav } from 'boot-cell/source/Navigator/Nav';
-import { Field } from 'boot-cell/source/Form/Field';
-import { Button } from 'boot-cell/source/Form/Button';
+import { NavBar, Nav, Field, Button } from 'boot-cell';
 
 import { IconNavLinkProps, IconNavLink } from './IconNavLink';
 import style from './PageFrame.less';

@@ -1,8 +1,6 @@
 import { createCell } from 'web-cell';
-import { formToJSON } from 'web-utility/source/DOM';
-import { FormField } from 'boot-cell/source/Form/FormField';
-import { ToggleField } from 'boot-cell/source/Form/ToggleField';
-import { Button } from 'boot-cell/source/Form/Button';
+import { formToJSON } from 'web-utility';
+import { FormField, ToggleField, Button } from 'boot-cell';
 
 import { history } from '../model';
 
@@ -82,7 +80,7 @@ export function SignInPage() {
                     target="_blank"
                     href="https://bootstrap.web-cell.dev/"
                 >
-                    BootCell v1
+                    BootCell v2
                 </a>
             </footer>
         </main>

@@ -1,4 +1,4 @@
-import { History } from 'cell-router/source';
+import { History } from 'cell-router';
 
 import { ContentModel } from './Content';
 
