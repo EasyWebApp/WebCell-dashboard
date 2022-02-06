@@ -72,7 +72,7 @@
     "scripts": {
         "prepare": "husky install",
         "test": "lint-staged",
-        "start": "parcel src/index.html --open",
+        "start": "parcel src/index.html --no-hmr --no-source-maps --open",
         "pack": "parcel build src/index.html --public-url .",
         "build": "rm -rf dist/  &&  npm run pack  &&  workbox generateSW"
     }
