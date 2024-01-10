@@ -1,22 +1,17 @@
-import { component, mixin, createCell, Fragment } from 'web-cell';
-import { observer } from 'mobx-web-cell';
-import { Button, DropMenu, Table, TableRow, FAIcon } from 'boot-cell';
+import { Button, DropMenu, FAIcon, Table, TableRow } from 'boot-cell';
 import Chart from 'chart.js';
+import { observer } from 'mobx-web-cell';
+import { component } from 'web-cell';
 
 import { PageFrame } from '../component/PageFrame';
-import menu from './menu.json';
 import { content } from '../model';
+import menu from './menu.json';
 
+@component({ tagName: 'dash-board' })
 @observer
-@component({
-    tagName: 'dash-board',
-    renderTarget: 'children'
-})
-export class DashBoard extends mixin() {
+export class DashBoard extends HTMLElement {
     connectedCallback() {
         content.getPaths();
-
-        super.connectedCallback();
     }
 
     renderChart = (canvas: HTMLCanvasElement) =>

@@ -18,7 +18,7 @@ export class ContentModel {
     }
 
     @observable
-    list: Content[] = [];
+    accessor list: Content[] = [];
 
     async getPaths() {
         const { body } = await service.get<Content[]>(

@@ -2,7 +2,7 @@
   "name": "WebCell dashboard",
   "short_name": "WC Demo",
   "start_url": ".",
-  "description": "Admin DashBoard scaffold of WebCell v2",
+  "description": "Admin DashBoard scaffold of WebCell v3",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",

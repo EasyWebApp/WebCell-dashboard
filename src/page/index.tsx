@@ -1,25 +1,31 @@
-import { createCell } from 'web-cell';
-import { CellRouter } from 'cell-router';
+import { PageProps, createRouter } from 'cell-router';
+import { FC } from 'web-cell';
 
-import { history } from '../model';
-
-import { SignInPage } from './SignIn';
 import { DashBoard } from './DashBoard';
+import { SignInPage } from './SignIn';
 
-export function PageFrame() {
-    return (
-        <CellRouter
-            history={history}
-            routes={[
-                {
-                    paths: [''],
-                    component: SignInPage
-                },
-                {
-                    paths: ['admin', 'admin/dashboard'],
-                    component: DashBoard
-                }
-            ]}
+const { Route } = createRouter({
+    startClass: 'start',
+    endClass: 'end'
+});
+
+export const PageFrame: FC = () => (
+    <>
+        <Route
+            path="/sign-in"
+            component={({ className }: PageProps) => (
+                <div className={`page ${className}`}>
+                    <SignInPage />
+                </div>
+            )}
         />
-    );
-}
+        <Route
+            path="/admin"
+            component={({ className }: PageProps) => (
+                <div className={`page ${className}`}>
+                    <DashBoard />
+                </div>
+            )}
+        />
+    </>
+);
