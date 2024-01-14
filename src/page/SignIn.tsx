@@ -1,9 +1,12 @@
 import { Button, FormCheck, FormField } from 'boot-cell';
-import { FC } from 'web-cell';
+import { FC, WebCellProps } from 'web-cell';
 import { formToJSON } from 'web-utility';
 
-export const SignInPage: FC = () => (
-    <main className="bg-light vh-100 d-flex flex-column">
+export const SignInPage: FC<WebCellProps> = ({ className = '', style }) => (
+    <main
+        className={`bg-light vh-100 d-flex flex-column ${className}`}
+        style={style}
+    >
         <form
             // @ts-ignore
             className="m-auto px-3 flex-fill d-flex flex-column justify-content-center gap-3"
@@ -13,7 +16,7 @@ export const SignInPage: FC = () => (
 
                 console.log(formToJSON(event.target as HTMLFormElement));
 
-                location.hash = '/admin';
+                location.hash = 'admin';
             }}
         >
             <div className="d-flex flex-column align-items-center gap-4">

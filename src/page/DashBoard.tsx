@@ -54,10 +54,10 @@ export class DashBoard extends HTMLElement {
         });
 
     renderRow = ({ type, html_url, name, path, size, sha }: Content) => (
-        <tr>
+        <tr key={name}>
             <td>
                 <Icon name={type === 'dir' ? 'folder' : type} />
-                <span className="sr-only">{type}</span>
+                <span className="sr-only ms-2">{type}</span>
             </td>
             <td>
                 <a target="_blank" href={html_url}>
@@ -71,14 +71,12 @@ export class DashBoard extends HTMLElement {
     );
 
     render() {
-        console.log(menu);
-
         return (
             <PageFrame menu={menu}>
-                <header className="d-flex flex-wrap align-items-center border-bottom mb-3">
+                <header className="d-flex flex-wrap align-items-center gap-3 border-bottom mb-3">
                     <h1>DashBoard</h1>
 
-                    <div className="btn-group ml-auto mr-3">
+                    <div className="btn-group">
                         <Button variant="outline-secondary" size="sm">
                             Share
                         </Button>
@@ -89,7 +87,7 @@ export class DashBoard extends HTMLElement {
                     <DropdownButton
                         caption={
                             <>
-                                <Icon name="calendar" className="mr-2" />
+                                <Icon name="calendar" className="me-2" />
                                 This week
                             </>
                         }

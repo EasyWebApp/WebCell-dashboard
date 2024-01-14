@@ -11,7 +11,7 @@ export const IconNavLink: FC<IconNavLinkProps> = ({
     ...rest
 }) => (
     <NavLink {...rest}>
-        <Icon name={icon} className="text-center mr-md-2" size={1.25} />
+        <Icon name={icon} className="text-center me-md-2" size={1.25} />
 
         <span className="d-none d-md-inline">{children}</span>
     </NavLink>

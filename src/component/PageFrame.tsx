@@ -1,4 +1,10 @@
-import { Button, FormControl, Nav, OffcanvasNavbar } from 'boot-cell';
+import {
+    Button,
+    FormControl,
+    FormGroup,
+    Nav,
+    OffcanvasNavbar
+} from 'boot-cell';
 import { JsxChildren } from 'dom-renderer';
 import { FC, PropsWithChildren } from 'web-cell';
 
@@ -8,7 +14,7 @@ import style from './PageFrame.module.less';
 
 interface MenuSection {
     title?: JsxChildren;
-    list: IconNavLinkProps[];
+    list: Pick<IconNavLinkProps, 'title' | 'href' | 'icon'>[];
 }
 
 export type PageFrameProps = PropsWithChildren<{
@@ -18,6 +24,9 @@ export type PageFrameProps = PropsWithChildren<{
 export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
     <>
         <OffcanvasNavbar
+            variant="dark"
+            fluid
+            expand="md"
             brand={
                 <img
                     style={{ width: '2rem' }}
@@ -26,20 +35,25 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
                 />
             }
         >
-            <FormControl
-                as="input"
-                type="search"
-                className="col-md-9 my-2 my-md-0"
-                required
-                placeholder="Search"
-            />
-            <Button
-                variant="outline-light"
-                className="ml-md-5 mr-md-4 text-nowrap"
-                onClick={() => (self.location.href = '')}
-            >
-                Sign out
-            </Button>
+            <div className="row w-100 ms-auto g-3">
+                <FormGroup className="col-md-3 offset-md-8">
+                    <FormControl
+                        as="input"
+                        type="search"
+                        required
+                        placeholder="Search"
+                    />
+                </FormGroup>
+                <FormGroup className="col-md-1">
+                    <Button
+                        variant="outline-light"
+                        className="text-nowrap"
+                        onClick={() => (self.location.href = '')}
+                    >
+                        Sign out
+                    </Button>
+                </FormGroup>
+            </div>
         </OffcanvasNavbar>
 
         <div className={style.body}>
@@ -51,8 +65,15 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
                                 {title}
                             </h6>
                         )}
-                        {list.map(({ title, ...rest }) => (
-                            <IconNavLink {...rest}>{title}</IconNavLink>
+                        {list.map(({ title, href, icon }) => (
+                            <IconNavLink
+                                key={title}
+                                className="text-nowrap"
+                                href={`#${href}`}
+                                icon={icon}
+                            >
+                                {title}
+                            </IconNavLink>
                         ))}
                     </>
                 ))}

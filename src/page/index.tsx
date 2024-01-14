@@ -9,6 +9,6 @@ const { Route } = createRouter();
 export const PageFrame: FC = () => (
     <>
         <Route path="" component={SignInPage} />
-        <Route path="/admin" component={DashBoard} />
+        <Route path="admin" component={DashBoard} />
     </>
 );
