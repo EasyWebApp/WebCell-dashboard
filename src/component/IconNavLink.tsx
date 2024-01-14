@@ -1,23 +1,18 @@
-import { createCell } from 'web-cell';
-import { NavLinkProps, NavLink } from 'boot-cell/source/Navigator/Nav';
-import { FAIcon } from 'boot-cell/source/Reminder/FAIcon';
+import { Icon, NavLink, NavLinkProps } from 'boot-cell';
+import { FC } from 'web-cell';
 
 export interface IconNavLinkProps extends NavLinkProps {
     icon: string;
 }
 
-export function IconNavLink({ icon, defaultSlot, ...rest }: IconNavLinkProps) {
-    return (
-        <NavLink {...rest}>
-            <FAIcon
-                name={icon}
-                className="text-center mr-md-2"
-                style={{
-                    width: '1.25rem',
-                    height: '1.25rem'
-                }}
-            />
-            <span className="d-none d-md-inline">{defaultSlot}</span>
-        </NavLink>
-    );
-}
+export const IconNavLink: FC<IconNavLinkProps> = ({
+    icon,
+    children,
+    ...rest
+}) => (
+    <NavLink {...rest}>
+        <Icon name={icon} className="text-center me-md-2" size={1.25} />
+
+        <span className="d-none d-md-inline">{children}</span>
+    </NavLink>
+);

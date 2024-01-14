@@ -4,32 +4,32 @@
             {
                 "title": "Dashboard",
                 "href": "admin/dashboard",
-                "icon": "home"
+                "icon": "house"
             },
             {
                 "title": "Orders",
                 "href": "admin/order",
-                "icon": "file"
+                "icon": "file-earmark"
             },
             {
                 "title": "Products",
                 "href": "admin/product",
-                "icon": "shopping-cart"
+                "icon": "cart"
             },
             {
                 "title": "Customers",
                 "href": "admin/customer",
-                "icon": "users"
+                "icon": "people"
             },
             {
                 "title": "Reports",
                 "href": "admin/report",
-                "icon": "chart-bar"
+                "icon": "bar-chart"
             },
             {
                 "title": "Integrations",
                 "href": "admin/integration",
-                "icon": "layer-group"
+                "icon": "stack"
             }
         ]
     },
@@ -39,22 +39,22 @@
             {
                 "title": "Current month",
                 "href": "admin/report?filter=month",
-                "icon": "file-alt"
+                "icon": "file-earmark-text"
             },
             {
                 "title": "Last quarter",
                 "href": "admin/report?filter=quarter",
-                "icon": "file-alt"
+                "icon": "file-earmark-text"
             },
             {
                 "title": "Social engagement",
                 "href": "admin/report?filter=social",
-                "icon": "file-alt"
+                "icon": "file-earmark-text"
             },
             {
                 "title": "Year-end sale",
                 "href": "admin/report?filter=year",
-                "icon": "file-alt"
+                "icon": "file-earmark-text"
             }
         ]
     }
