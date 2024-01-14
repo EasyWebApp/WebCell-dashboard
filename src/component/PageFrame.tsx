@@ -1,13 +1,13 @@
-import { Button, Field, Nav, OffcanvasNavbar } from 'boot-cell';
-import { VNode } from 'dom-renderer';
+import { Button, FormControl, Nav, OffcanvasNavbar } from 'boot-cell';
+import { JsxChildren } from 'dom-renderer';
 import { FC, PropsWithChildren } from 'web-cell';
 
 import WebCell_0 from '../image/WebCell-0.png';
 import { IconNavLink, IconNavLinkProps } from './IconNavLink';
-import style from './PageFrame.less';
+import style from './PageFrame.module.less';
 
 interface MenuSection {
-    title?: VNode;
+    title?: JsxChildren;
     list: IconNavLinkProps[];
 }
 
@@ -20,21 +20,21 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
         <OffcanvasNavbar
             brand={
                 <img
-                    className={style.logo}
+                    style={{ width: '2rem' }}
                     alt="WebCell scaffold"
                     src={WebCell_0}
                 />
             }
         >
-            <Field
+            <FormControl
+                as="input"
                 type="search"
                 className="col-md-9 my-2 my-md-0"
                 required
                 placeholder="Search"
             />
             <Button
-                color="light"
-                outline
+                variant="outline-light"
                 className="ml-md-5 mr-md-4 text-nowrap"
                 onClick={() => (self.location.href = '')}
             >
@@ -43,7 +43,7 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
         </OffcanvasNavbar>
 
         <div className={style.body}>
-            <Nav direction="column" className="py-2 bg-light border-right">
+            <Nav className="flex-column py-2 bg-light border-right">
                 {menu.map(({ title, list }) => (
                     <>
                         {title && (

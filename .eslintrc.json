@@ -20,6 +20,7 @@
     "rules": {
         "no-unused-vars": "warn",
         "prefer-const": "warn",
+        "@typescript-eslint/ban-ts-comment": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }

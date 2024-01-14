@@ -1,10 +1,9 @@
-import { Button, DropMenu, FAIcon, Table, TableRow } from 'boot-cell';
+import { Button, DropdownButton, Icon, Table } from 'boot-cell';
 import Chart from 'chart.js';
-import { observer } from 'mobx-web-cell';
-import { component } from 'web-cell';
+import { component, observer } from 'web-cell';
 
 import { PageFrame } from '../component/PageFrame';
-import { content } from '../model';
+import { content, Content } from '../model';
 import menu from './menu.json';
 
 @component({ tagName: 'dash-board' })
@@ -54,30 +53,48 @@ export class DashBoard extends HTMLElement {
             }
         });
 
+    renderRow = ({ type, html_url, name, path, size, sha }: Content) => (
+        <tr>
+            <td>
+                <Icon name={type === 'dir' ? 'folder' : type} />
+                <span className="sr-only">{type}</span>
+            </td>
+            <td>
+                <a target="_blank" href={html_url}>
+                    {name}
+                </a>
+            </td>
+            <td>{path}</td>
+            <td className="text-right">{size}</td>
+            <td>{sha}</td>
+        </tr>
+    );
+
     render() {
+        console.log(menu);
+
         return (
             <PageFrame menu={menu}>
                 <header className="d-flex flex-wrap align-items-center border-bottom mb-3">
                     <h1>DashBoard</h1>
 
                     <div className="btn-group ml-auto mr-3">
-                        <Button color="secondary" size="sm" outline>
+                        <Button variant="outline-secondary" size="sm">
                             Share
                         </Button>
-                        <Button color="secondary" size="sm" outline>
+                        <Button variant="outline-secondary" size="sm">
                             Export
                         </Button>
                     </div>
-                    <DropMenu
+                    <DropdownButton
                         caption={
                             <>
-                                <FAIcon name="calendar" className="mr-2" />
+                                <Icon name="calendar" className="mr-2" />
                                 This week
                             </>
                         }
-                        buttonColor="secondary"
-                        buttonSize="sm"
-                        alignType="end"
+                        variant="secondary"
+                        size="sm"
                     />
                 </header>
 
@@ -87,35 +104,17 @@ export class DashBoard extends HTMLElement {
                 />
                 <h2 className="mt-3">Contents</h2>
 
-                <Table striped hover center>
-                    <TableRow type="head">
-                        <th>Type</th>
-                        <th>Name</th>
-                        <th>Path</th>
-                        <th>Size</th>
-                        <th>SHA</th>
-                    </TableRow>
-
-                    {content.list.map(
-                        ({ type, html_url, name, path, size, sha }) => (
-                            <TableRow>
-                                <td>
-                                    <FAIcon
-                                        name={type === 'dir' ? 'folder' : type}
-                                    />
-                                    <span className="sr-only">{type}</span>
-                                </td>
-                                <td>
-                                    <a target="_blank" href={html_url}>
-                                        {name}
-                                    </a>
-                                </td>
-                                <td>{path}</td>
-                                <td className="text-right">{size}</td>
-                                <td>{sha}</td>
-                            </TableRow>
-                        )
-                    )}
+                <Table striped hover>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Path</th>
+                            <th>Size</th>
+                            <th>SHA</th>
+                        </tr>
+                    </thead>
+                    <tbody>{content.list.map(this.renderRow)}</tbody>
                 </Table>
             </PageFrame>
         );

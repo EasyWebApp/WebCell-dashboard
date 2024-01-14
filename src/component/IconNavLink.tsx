@@ -1,4 +1,4 @@
-import { FAIcon, NavLink, NavLinkProps } from 'boot-cell';
+import { Icon, NavLink, NavLinkProps } from 'boot-cell';
 import { FC } from 'web-cell';
 
 export interface IconNavLinkProps extends NavLinkProps {
@@ -11,14 +11,8 @@ export const IconNavLink: FC<IconNavLinkProps> = ({
     ...rest
 }) => (
     <NavLink {...rest}>
-        <FAIcon
-            name={icon}
-            className="text-center mr-md-2"
-            style={{
-                width: '1.25rem',
-                height: '1.25rem'
-            }}
-        />
+        <Icon name={icon} className="text-center mr-md-2" size={1.25} />
+
         <span className="d-none d-md-inline">{children}</span>
     </NavLink>
 );

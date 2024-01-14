@@ -1,30 +1,27 @@
-import { Button, FormField, ToggleField } from 'boot-cell';
+import { Button, FormCheck, FormField } from 'boot-cell';
 import { FC } from 'web-cell';
 import { formToJSON } from 'web-utility';
 
-import { history } from '../model';
-
 export const SignInPage: FC = () => (
-    <main className="bg-light">
+    <main className="bg-light vh-100 d-flex flex-column">
         <form
             // @ts-ignore
-            className="m-auto py-5 px-3"
+            className="m-auto px-3 flex-fill d-flex flex-column justify-content-center gap-3"
             style={{ maxWidth: '26.25rem' }}
             onSubmit={(event: Event) => {
                 event.preventDefault(), event.stopPropagation();
 
                 console.log(formToJSON(event.target as HTMLFormElement));
 
-                history.push('admin');
+                location.hash = '/admin';
             }}
         >
-            <div className="text-center mb-4">
+            <div className="d-flex flex-column align-items-center gap-4">
                 <img
-                    className="mb-4"
                     style={{ width: '72', height: '72' }}
                     src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg"
                 />
-                <h1 className="h3 mb-3 font-weight-normal">Floating labels</h1>
+                <h1 className="h3 m-0 font-weight-normal">Floating labels</h1>
                 <p>
                     Build form controls with floating labels via the{' '}
                     <code>:placeholder-shown</code> pseudo-element.{' '}
@@ -35,6 +32,7 @@ export const SignInPage: FC = () => (
             </div>
 
             <FormField
+                as="input"
                 type="email"
                 name="email"
                 required
@@ -43,6 +41,7 @@ export const SignInPage: FC = () => (
                 labelFloat
             />
             <FormField
+                as="input"
                 type="password"
                 name="password"
                 required
@@ -50,16 +49,22 @@ export const SignInPage: FC = () => (
                 placeholder="Password"
                 labelFloat
             />
-            <ToggleField className="mb-3" type="checkbox" name="remember_me">
-                Remember me
-            </ToggleField>
-
-            <Button type="submit" color="primary" block size="lg">
+            <FormCheck
+                type="checkbox"
+                name="remember_me"
+                label={<>Remember me</>}
+            />
+            <Button
+                type="submit"
+                variant="primary"
+                className="d-block w-100"
+                size="lg"
+            >
                 Sign in
             </Button>
         </form>
 
-        <footer className="text-center bg-light py-5">
+        <footer className="text-center bg-light py-4">
             Proudly developed with
             <a className="mx-1" target="_blank" href="https://web-cell.dev/">
                 WebCell v3
