@@ -1,5 +1,8 @@
 import { Button, DropdownButton, Icon, Table } from 'boot-cell';
-import Chart from 'chart.js';
+import 'echarts-jsx/dist/charts/line';
+import 'echarts-jsx/dist/components/x-axis';
+import 'echarts-jsx/dist/components/y-axis';
+import 'echarts-jsx/dist/renderers/SVG';
 import { component, observer } from 'web-cell';
 
 import { PageFrame } from '../component/PageFrame';
@@ -12,46 +15,6 @@ export class DashBoard extends HTMLElement {
     connectedCallback() {
         content.getPaths();
     }
-
-    renderChart = (canvas: HTMLCanvasElement) =>
-        new Chart(canvas, {
-            type: 'line',
-            data: {
-                labels: [
-                    'Sunday',
-                    'Monday',
-                    'Tuesday',
-                    'Wednesday',
-                    'Thursday',
-                    'Friday',
-                    'Saturday'
-                ],
-                datasets: [
-                    {
-                        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                        lineTension: 0,
-                        backgroundColor: 'transparent',
-                        borderColor: '#007bff',
-                        borderWidth: 4,
-                        pointBackgroundColor: '#007bff'
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    yAxes: [
-                        {
-                            ticks: {
-                                beginAtZero: false
-                            }
-                        }
-                    ]
-                },
-                legend: {
-                    display: false
-                }
-            }
-        });
 
     renderRow = ({ type, html_url, name, path, size, sha }: Content) => (
         <tr key={name}>
@@ -96,10 +59,25 @@ export class DashBoard extends HTMLElement {
                     />
                 </header>
 
-                <canvas
-                    style={{ width: '100%', height: '80vh' }}
-                    ref={this.renderChart}
-                />
+                <ec-svg-renderer>
+                    <ec-x-axis
+                        type="category"
+                        data={[
+                            'Sunday',
+                            'Monday',
+                            'Tuesday',
+                            'Wednesday',
+                            'Thursday',
+                            'Friday',
+                            'Saturday'
+                        ]}
+                    />
+                    <ec-y-axis type="value" />
+                    <ec-line-chart
+                        data={[15339, 21345, 18483, 24003, 23489, 24092, 12034]}
+                    />
+                </ec-svg-renderer>
+
                 <h2 className="mt-3">Contents</h2>
 
                 <Table striped hover>
