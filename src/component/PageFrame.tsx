@@ -22,7 +22,7 @@ export type PageFrameProps = PropsWithChildren<{
 }>;
 
 export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
-    <>
+    <div>
         <OffcanvasNavbar
             variant="dark"
             fluid
@@ -82,5 +82,5 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
                 {children}
             </main>
         </div>
-    </>
+    </div>
 );
