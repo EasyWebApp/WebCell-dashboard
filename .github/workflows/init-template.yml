@@ -5,7 +5,7 @@ on:
             - main
 env:
     TEMPLATE_OWNER: EasyWebApp
-    TEMPLATE_NAME: DashBoard
+    TEMPLATE_NAME: WebCell-dashboard
 
 jobs:
     replace-repository-name:

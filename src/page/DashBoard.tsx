@@ -37,7 +37,7 @@ export class DashBoard extends HTMLElement {
         return (
             <PageFrame menu={menu}>
                 <header className="d-flex flex-wrap align-items-center gap-3 border-bottom mb-3">
-                    <h1>DashBoard</h1>
+                    <h1>WebCell-dashboard</h1>
 
                     <div className="btn-group">
                         <Button variant="outline-secondary" size="sm">

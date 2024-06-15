@@ -1,12 +1,12 @@
 ![](https://github.com/EasyWebApp.png)
 
-# WebCell DashBoard
+# WebCell-dashboard
 
 Admin DashBoard scaffold of **WebCell** v3
 
 https://web-cell-dashboard.vercel.app/
 
-[![CI & CD](https://github.com/EasyWebApp/DashBoard/actions/workflows/main.yml/badge.svg)][1]
+[![CI & CD](https://github.com/EasyWebApp/WebCell-dashboard/actions/workflows/main.yml/badge.svg)][1]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][2]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][3]
@@ -54,9 +54,9 @@ pnpm build
 
 7.  Collect all these issues into [Project kanbans][20], then create **Pull requests** & add `closes #issue_number` into its description for automation
 
-[1]: https://github.com/EasyWebApp/DashBoard/actions/workflows/main.yml
-[2]: https://codespaces.new/EasyWebApp/DashBoard
-[3]: https://gitpod.io/?autostart=true#https://github.com/EasyWebApp/DashBoard
+[1]: https://github.com/EasyWebApp/WebCell-dashboard/actions/workflows/main.yml
+[2]: https://codespaces.new/EasyWebApp/WebCell-dashboard
+[3]: https://gitpod.io/?autostart=true#https://github.com/EasyWebApp/WebCell-dashboard
 [4]: https://typescriptlang.org/
 [5]: https://web-cell.dev/
 [6]: https://bootstrap.web-cell.dev/
@@ -68,9 +68,9 @@ pnpm build
 [12]: https://github.com/apps/settings
 [13]: https://pullrequestbadge.com/
 [14]: https://code.visualstudio.com/
-[15]: https://github.com/new?template_name=DashBoard&template_owner=EasyWebApp
+[15]: https://github.com/new?template_name=WebCell-dashboard&template_owner=EasyWebApp
 [16]: https://github.com/idea2app/Next-Bootstrap-ts/blob/80967ed49045af9dbcf4d3695a2c39d53a6f71f1/.github/workflows/pull-request.yml#L9-L12
-[17]: https://github.com/EasyWebApp/DashBoard/settings/secrets/actions
+[17]: https://github.com/EasyWebApp/WebCell-dashboard/settings/secrets/actions
 [18]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
-[19]: https://github.com/EasyWebApp/DashBoard/issues/new/choose
-[20]: https://github.com/EasyWebApp/DashBoard/projects
+[19]: https://github.com/EasyWebApp/WebCell-dashboard/issues/new/choose
+[20]: https://github.com/EasyWebApp/WebCell-dashboard/projects

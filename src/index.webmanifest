@@ -1,5 +1,5 @@
 {
-  "name": "WebCell dashboard",
+  "name": "WebCell-dashboard",
   "short_name": "WC Demo",
   "start_url": ".",
   "description": "Admin DashBoard scaffold of WebCell v3",

@@ -4,5 +4,5 @@ export * from './Content';
 
 export const content = new ContentModel({
     owner: 'EasyWebApp',
-    repo: 'DashBoard'
+    repo: 'WebCell-dashboard'
 });

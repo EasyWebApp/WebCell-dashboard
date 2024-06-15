@@ -1,7 +1,7 @@
 {
     "name": "webcell-dashboard",
     "version": "0.5.0",
-    "description": "Admin DashBoard scaffold of WebCell v2",
+    "description": "Admin DashBoard scaffold of WebCell v3",
     "keywords": [
         "web-component",
         "typescript",
@@ -13,10 +13,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/EasyWebApp/DashBoard.git"
+        "url": "git+https://github.com/EasyWebApp/WebCell-dashboard.git"
     },
     "bugs": {
-        "url": "https://github.com/EasyWebApp/DashBoard/issues"
+        "url": "https://github.com/EasyWebApp/WebCell-dashboard/issues"
     },
     "dependencies": {
         "boot-cell": "^2.0.0-beta.26",
