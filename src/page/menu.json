@@ -7,8 +7,8 @@
                 "icon": "house"
             },
             {
-                "title": "Orders",
-                "href": "admin/order",
+                "title": "Downloader",
+                "href": "admin/downloader",
                 "icon": "file-earmark"
             },
             {
