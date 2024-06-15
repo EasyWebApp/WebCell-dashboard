@@ -22,7 +22,7 @@ export type PageFrameProps = PropsWithChildren<{
 }>;
 
 export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
-    <div>
+    <>
         <OffcanvasNavbar
             variant="dark"
             fluid
@@ -36,7 +36,7 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
             }
         >
             <div className="row w-100 ms-auto g-3">
-                <FormGroup className="col-md-3 offset-md-8">
+                <FormGroup className="col-md-3 offset-md-7">
                     <FormControl
                         as="input"
                         type="search"
@@ -44,7 +44,7 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
                         placeholder="Search"
                     />
                 </FormGroup>
-                <FormGroup className="col-md-1">
+                <FormGroup className="col-md-2 text-end">
                     <Button
                         variant="outline-light"
                         className="text-nowrap"
@@ -82,5 +82,5 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
                 {children}
             </main>
         </div>
-    </div>
+    </>
 );
