@@ -11,7 +11,7 @@ import menu from './menu.json';
 
 @component({ tagName: 'dash-board' })
 @observer
-export class DashBoard extends HTMLElement {
+export default class DashBoard extends HTMLElement {
     connectedCallback() {
         content.getPaths();
     }
