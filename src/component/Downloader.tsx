@@ -8,7 +8,7 @@ import {
     Icon,
     ProgressBar
 } from 'boot-cell';
-import { DownloadTask } from 'mobx-restful';
+import { DownloadTask } from 'mobx-downloader';
 
 import { downloader } from '../model';
 

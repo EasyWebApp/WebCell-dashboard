@@ -1,17 +1,17 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "module": "CommonJS",
+        "module": "ES2020",
         "moduleResolution": "Node",
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "useDefineForClassFields": true,
-        "allowJs": true,
+        "checkJs": true,
         "sourceMap": true,
         "jsx": "react-jsx",
         "jsxImportSource": "dom-renderer",
         "lib": ["ES6", "DOM"],
-        "rootDir": "src"
+        "outDir": "dist"
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "*.mjs"]
 }

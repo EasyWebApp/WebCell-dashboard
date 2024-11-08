@@ -1,4 +1,4 @@
-import { Downloader } from 'mobx-restful';
+import { Downloader } from 'mobx-downloader';
 
 import { ContentModel } from './Content';
 
