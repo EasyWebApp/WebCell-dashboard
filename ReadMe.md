@@ -4,7 +4,7 @@
 
 Admin DashBoard scaffold of **WebCell** v3
 
-https://web-cell-dashboard.vercel.app/
+https://web-cell.dev/WebCell-dashboard/
 
 [![CI & CD](https://github.com/EasyWebApp/WebCell-dashboard/actions/workflows/main.yml/badge.svg)][1]
 

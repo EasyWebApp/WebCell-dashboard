@@ -1,15 +1,17 @@
-import { Button, DropdownButton, Icon, Table } from 'boot-cell';
 import 'echarts-jsx/dist/charts/line';
 import 'echarts-jsx/dist/components/x-axis';
 import 'echarts-jsx/dist/components/y-axis';
 import 'echarts-jsx/dist/renderers/SVG';
+
+import { Button, DropdownButton, Icon, Table } from 'boot-cell';
 import { component, observer } from 'web-cell';
 
 import { PageFrame } from '../component/PageFrame';
-import { content, Content } from '../model';
+import { Content,content } from '../model';
+import { renderMode } from '../utility';
 import menu from './menu.json';
 
-@component({ tagName: 'dash-board' })
+@component({ tagName: 'dash-board', renderMode })
 @observer
 export default class DashBoard extends HTMLElement {
     connectedCallback() {
@@ -23,7 +25,7 @@ export default class DashBoard extends HTMLElement {
                 <span className="sr-only ms-2">{type}</span>
             </td>
             <td>
-                <a target="_blank" href={html_url}>
+                <a target="_blank" href={html_url} rel="noreferrer">
                     {name}
                 </a>
             </td>
