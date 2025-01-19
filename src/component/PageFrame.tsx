@@ -10,7 +10,7 @@ import { FC, PropsWithChildren } from 'web-cell';
 
 import WebCell_0 from '../image/WebCell-0.png';
 import { IconNavLink, IconNavLinkProps } from './IconNavLink';
-import style from './PageFrame.module.less';
+import * as styles from './PageFrame.module.less';
 
 interface MenuSection {
     title?: JsxChildren;
@@ -56,7 +56,7 @@ export const PageFrame: FC<PageFrameProps> = ({ menu = [], children }) => (
             </div>
         </OffcanvasNavbar>
 
-        <div className={style.body}>
+        <div className={styles.body}>
             <Nav className="flex-column py-2 bg-light border-right">
                 {menu.map(({ title, list }) => (
                     <>

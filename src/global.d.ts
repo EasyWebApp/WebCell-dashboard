@@ -1,10 +1,10 @@
 declare module '*.css' {
     const map: Record<string, string>;
-    export default map;
+    export = map;
 }
 declare module '*.less' {
     const map: Record<string, string>;
-    export default map;
+    export = map;
 }
 declare module '*.gif' {
     const path: string;

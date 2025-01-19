@@ -8,11 +8,11 @@ export const SignInPage: FC<WebCellProps> = ({ className = '', style }) => (
         style={style}
     >
         <form
-            // @ts-ignore
             className="m-auto px-3 flex-fill d-flex flex-column justify-content-center gap-3"
             style={{ maxWidth: '26.25rem' }}
             onSubmit={(event: Event) => {
-                event.preventDefault(), event.stopPropagation();
+                event.preventDefault();
+                event.stopPropagation();
 
                 console.log(formToJSON(event.target as HTMLFormElement));
 
@@ -22,7 +22,7 @@ export const SignInPage: FC<WebCellProps> = ({ className = '', style }) => (
             <div className="d-flex flex-column align-items-center gap-4">
                 <img
                     style={{ width: '72', height: '72' }}
-                    src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg"
+                    src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
                 />
                 <h1 className="h3 m-0 font-weight-normal">Floating labels</h1>
                 <p>
@@ -69,14 +69,14 @@ export const SignInPage: FC<WebCellProps> = ({ className = '', style }) => (
 
         <footer className="text-center bg-light py-4">
             Proudly developed with
-            <a className="mx-1" target="_blank" href="https://web-cell.dev/">
+            <a className="mx-1" target="_blank" href="https://web-cell.dev/" rel="noreferrer">
                 WebCell v3
             </a>
             &amp;
             <a
                 className="mx-1"
                 target="_blank"
-                href="https://bootstrap.web-cell.dev/"
+                href="https://bootstrap.web-cell.dev/" rel="noreferrer"
             >
                 BootCell v2
             </a>
