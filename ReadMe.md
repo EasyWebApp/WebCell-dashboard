@@ -8,9 +8,19 @@ https://web-cell.dev/WebCell-dashboard/
 
 [![CI & CD](https://github.com/EasyWebApp/WebCell-dashboard/actions/workflows/main.yml/badge.svg)][1]
 
+
+## 🌏  Open in the Cloud 
+
+Click any of the buttons below to start a new development environment to demo or contribute to the codebase without having to install anything on your machine:
+
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/easywebapp/webcell-dashboard)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][2]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][3]
-
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/easywebapp/webcell-dashboard)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/easywebapp/webcell-dashboard)
+[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/easywebapp/webcell-dashboard)
+[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/easywebapp/webcell-dashboard)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/easywebapp/webcell-dashboard)
 ## Technology stack
 
 -   Language: [TypeScript v5][4]
